@@ -1,3 +1,4 @@
+![alt text](https://github.com/Niko-Retrobricker/RetroBricker/blob/main/logo.png?raw=true)
 # RetroBricker
 A sleek gui script for a game on Roblox called Retrostudio
 
