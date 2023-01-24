@@ -13,4 +13,6 @@ https://github.com/EdgeIY/infiniteyield
 @@ Sirhurt - Support implemented, but untested                @@
 @@ Krnl - Untested                                            @@
 @@ JJsploit - Untested                                        @@
+
+- Any mobile executor (why?!)
 ```
