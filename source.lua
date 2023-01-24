@@ -78,6 +78,21 @@ function writefileExploit()
 	end
 end
 
+local cooldown = false
+function writefileCooldown(name,data)
+	task.spawn(function()
+		if not cooldown then
+			cooldown = true
+			writefile(name, data)
+		else
+			repeat wait() until cooldown == false
+			writefileCooldown(name,data)
+		end
+		wait(3)
+		cooldown = false
+	end)
+end
+
 function isNumber(str)
 	if tonumber(str) ~= nil or str == 'inf' then
 		return true
