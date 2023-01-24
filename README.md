@@ -6,3 +6,11 @@ Credit to Infinite Yield and their team for some of the code within my script
 https://github.com/EdgeIY/infiniteyield
 
 # Coming soon...
+
+# Supported Executors
+```diff
++  Synapse X - Full Support
+@@ Sirhurt - Support implemented, but untested                @@
+@@ Krnl - Untested                                            @@
+@@ JJsploit - Untested                                        @@
+```
