@@ -14,17 +14,15 @@ saveVars = {
     nothing = false -- this is useless, and does nothing as it says
 }
 
--- This function will be called on each renderstep or heartbeat
--- If you would not like anything to be looped, remove this function completely
--- DO NOT USE ANY FOREVER LOOPS (while true...) IT WILL HANG THE SCRIPT!
--- Event is a string that contains how moduleLoop was called
---- "renderstep" if called from renderstep
---- "heartbeat" if called from heartbeat
--- Entering anything that will cause the script to yield (wait) will cause it to miss future loops until that has completed
-function moduleLoop(event)
-    if event = "renderstep" then
+-- Make sure to keep all custom declaration after the above headers!
+RunService = game:GetService("RunService")
 
-    else if event = "heartbeat" then
+-- This function will be called on each renderstep
+-- If you would not like anything to run on renderstep, remove this function completely
+RunService.RenderStepped:Connect(function(_currentTime, deltaTime)
+    
+end)
 
-    end
-end
+RunService.Heartbeat:Connect(function()
+
+end)
