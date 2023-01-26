@@ -1,7 +1,7 @@
--- Note, each thing here is treated as an individual lua file, therfore anything can be run anywhere.
+-- Note, each descriptor here is treated as an individual lua file, therfore anything can be run in any of them.
 -- Different things may not execute the same as others.
 
--- Here holds information about the modulepack
+-- The header holds information about the modulepack
 -- The return must hold a table
 -- To make a module, add another table to the modules table.
 -- The name of the table will be the modules identifier that will fire the moduleEvent
@@ -12,28 +12,31 @@
 -- These functions are listed below
 
 ---- Objects
+
+-- identifier - unique identifer for each object in an individual module
+-- the same identifier can be used in two or more modules, but you cannot reuse identifiers in one module
+-- centering - The centering of the switch <0 = left, 1 = center, 2 = right
+
 --- moduleBlank()
 --- A blank module used with moduleMultiple to help with positioning.
--- example - Switch, Blank, Switch, Blank
+-- example - moduleMultiple(moduleSwitch(), moduleBlank(), moduleSwitch(), moduleBlank())
 
 --- moduleMultiple(<objects> - table)
 --- Used to have multiple objects in one horizontal spot
--- example - Text, Switch
+-- example - moduleMultiple(moduleText(), moduleSwitch())
 
---- moduleSwitch(<Switch Identifer> - string, <Switchable?> - bool, <state> - bool, <centering> - number)
+--- moduleSwitch(<Identifer> - string, <Switchable?> - bool, <state> - bool, <centering> - number)
 --- Creates a switch that will be displayed in the module
--- Switch Identifier - The identifier of the switch
 -- Switchable? - determines if the switch can be switched by the user or not.
 -- state - the default state of the switch, true or false
--- centering - The centering of the switch <0 = left, 1 = center, 2 = right
 
+--- moduleText(<Identifer> - string, <text> - string, <size> - number, <centering> - number)
 
-
-header = {
+header<{
     return {
         identifier = "sample_modulepack_1", -- string
         version = 1, -- number
-        group = "Tutorial" -- string
+        group = "Tutorial", -- string
         -- The group will be where your module is held
         -- Defaults
         -- "Character"
@@ -42,32 +45,37 @@ header = {
         modules = {
             tutorial_module_1 = {
                 name = "Tutorial Module 1", -- The name that will be displayed as the title of the module
-                switchable = true, -- Determines if there will be a switch next to the name
+                description = "This is a tutorial module" -- The descripton that will be shown below the title
+                title_activator= 1, -- Determines the activation type next to the name
+                -- 0 = No activator
+                -- 1 = Switch
+                -- 2 = Power Button
                 warningType = 0
                 -- 0 = no warning
                 -- 1 = Detectable warning
                 -- 2 = Client-side warning
                 body = { -- the first thing will be on top of the modules body, the second will be below the first, and so on
-                    moduleSwitch("switch1"),
+                    moduleText("text1",)
+                    moduleSwitch("switch1", true, ),
                 }
             }
         }
     }
-},
+}
 
 -- Here, you can enter variables that will be saved after the roblox instance ends
 -- The value you set the variable to will be the default
 -- You can also remove this table if you don't need it
-saveVars = {
+saveVars<{
     return {
-        notif_message = "This is the default message!"
+        notif_message = "This is the default message!",
         nothing = false -- this is useless, and does nothing as it says
     }
-},
+}
 
 -- This is the setup that **will only be ran once**, but will be kept in a coroutine
 -- Use ':connect' functions to loop!
-setup = {
+setup<{
     --Here is a template looper
     RunService = game:GetService("RunService")
     
