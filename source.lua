@@ -247,6 +247,26 @@ function getHierarchy(obj)
 		return 'game:GetService("'..service..'")'..fullname
 	end
 end
+
+function getDescriptor(descriptor, string)
+	local desStart, desEnd = string.find(string, descriptor.."<{", 1, true)
+	if desStart == nil then
+		return nil
+	else
+		local depth = 1
+		local pointer = desEnd
+		
+		repeat
+			pointer += 1
+			local char = string.sub(string, pointer, pointer)
+			if char == "{" then depth += 1 end
+			if char == "}" then depth -= 1 end
+		until depth == 0
+
+		return string.sub(string, desEnd+1, pointer-1)
+	end
+end
+
 -------------------------------
 ---==End of base Functions==---
 -------------------------------
