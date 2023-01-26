@@ -13,6 +13,6 @@ https://github.com/EdgeIY/infiniteyield
 @@ Sirhurt - Support implemented, but untested                @@
 @@ Krnl - Untested                                            @@
 @@ JJsploit - Untested                                        @@
-@@ Fluxus (Desktop) - Untested
+@@ Fluxus (Desktop) - Untested                                @@
 - Any mobile executor (why?!)
 ```
