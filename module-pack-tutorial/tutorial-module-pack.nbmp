@@ -53,21 +53,11 @@ header<{
                 -- 1 = Detectable warning
                 -- 2 = Client-side warning
                 body = { -- the first thing will be on top of the modules body, the second will be below the first, and so on
-                    moduleText("text1",)
+                    moduleText("text1",),
                     moduleSwitch("switch1", true, ),
                 }
             }
         }
-    }
-}
-
--- Here, you can enter variables that will be saved after the roblox instance ends
--- The value you set the variable to will be the default
--- You can also remove this table if you don't need it
-saveVars<{
-    return {
-        notif_message = "This is the default message!",
-        nothing = false -- this is useless, and does nothing as it says
     }
 }
 
@@ -90,4 +80,10 @@ setup<{
     RunService.Heartbeat:Connect(function(deltaTime) -- Heartbeat run's **after** each physics simulation
     
     end)
+}
+
+onFire<{
+    if firedModuleIdentifier == moduleIdentifier then
+        
+    end
 }
