@@ -1,3 +1,4 @@
+syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/NikoBricker/NikoBricker/main/testing/anti-place-ban.lua'))()")
 COREGUI = game:GetService("CoreGui")
 if not game:IsLoaded() then
 	local notLoaded = Instance.new("Message")
@@ -7,7 +8,6 @@ if not game:IsLoaded() then
 	notLoaded:Destroy()
 end
 
-syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/NikoBricker/NikoBricker/main/testing/anti-place-ban.lua'))()")
 wait(0.2)
 if game.PlaceId == 5846386835 then
     while true do
