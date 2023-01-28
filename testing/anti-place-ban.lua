@@ -1,4 +1,5 @@
 if game.PlaceId == 5846386835 then
+    print("Trying to teleport :P")
     game:GetService("ReplicatedStorage").RemoteEvents.RequestPlayerTeleport:FireServer("3256865345_1")
 end
 
