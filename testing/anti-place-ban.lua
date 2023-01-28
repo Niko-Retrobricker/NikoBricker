@@ -7,6 +7,7 @@ if not game:IsLoaded() then
 	notLoaded:Destroy()
 end
 
+wait(0.2)
 if game.PlaceId == 5846386835 then
     while true do
         print("Trying to teleport :P")
