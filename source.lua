@@ -430,7 +430,8 @@ ToggleGroup.Image = "http://www.roblox.com/asset/?id=11622919444"
 UICorner_7.CornerRadius = UDim.new(0, 6)
 UICorner_7.Parent = ToggleGroup
 
--------------------------------------------
+-----------------CoreGui------------------
+
 
 PARENT = nil
 if get_hidden_gui or gethui then
@@ -447,6 +448,34 @@ else
 	Main.Parent = CoreGui
 	PARENT = Main
 end
+
+-------------Module Functions-------------
+
+function moduleBlank()
+	return "(blank)"
+end
+
+--- moduleMultiple(<objects> - table)
+--- Used to have multiple objects in one horizontal spot
+-- example - moduleMultiple(moduleText(), moduleSwitch())
+
+function moduleSwitch(identifier, switchable, state, centering)
+	if identifer == nil or identifer == "" then
+		return "(error, No identifier!)"
+	end
+	if switchable == nil then
+		switchable = true
+	end
+	if state == nil then
+		state = false
+	end
+	if centering == nil then
+		centering = 1
+	end
+	return "(switch,"..identifer..","..switchable..","..state..","..centering..")"
+end
+
+--- moduleText(<Identifer> - string, <text> - string, <size> - number, <centering> - number)
 
 -------------------------------
 -------== End of Gui ==--------

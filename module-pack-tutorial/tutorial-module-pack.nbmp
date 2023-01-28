@@ -41,7 +41,7 @@ header<{
         -- "Tool Tampering"
         -- "Visual"
         modules = {
-            tutorial_module_1 = {
+            tutorial_module_1 = { -- name of this table is the identifier
                 name = "Tutorial Module 1", -- The name that will be displayed as the title of the module
                 description = "This is a tutorial module", -- The descripton that will be shown below the title
                 title_activator= 1, -- Determines the activation type next to the name
