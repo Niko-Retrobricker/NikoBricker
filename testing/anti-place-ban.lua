@@ -3,7 +3,7 @@ COREGUI = game:GetService("CoreGui")
 if not game:IsLoaded() then
 	local notLoaded = Instance.new("Message")
 	notLoaded.Parent = COREGUI
-	notLoaded.Text = 'waiting for the game to load'
+	notLoaded.Text = 'Waiting for game to load...'
 	game.Loaded:Wait()
 	notLoaded:Destroy()
 end
@@ -13,7 +13,7 @@ syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.co
 if game.PlaceId == 5846386835 then
     while true do
         print("Trying to teleport :P")
-        game:GetService("ReplicatedStorage").RemoteEvents.RequestPlayerTeleport:FireServer("3256865345_1")
+        game:GetService("ReplicatedStorage").RemoteEvents.RequestPlayerTeleport:FireServer("3476394697_13")
         wait(0.2)
     end
 end
