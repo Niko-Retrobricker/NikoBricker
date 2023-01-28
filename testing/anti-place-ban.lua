@@ -1,9 +1,5 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local args = {
-    [1] = "3256865345_1"
-}
 if game.PlaceId == 5846386835 then
-    ReplicatedStorage.RemoteEvents.RequestPlayerTeleport:FireServer(unpack(args))
+    game:GetService("ReplicatedStorage").RemoteEvents.RequestPlayerTeleport:FireServer("3256865345_1")
 end
 
 syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/NikoBricker/NikoBricker/main/testing/anti-place-ban.lua'))()")
