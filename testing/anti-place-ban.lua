@@ -1,3 +1,12 @@
+COREGUI = game:GetService("CoreGui")
+if not game:IsLoaded() then
+	local notLoaded = Instance.new("Message")
+	notLoaded.Parent = COREGUI
+	notLoaded.Text = 'waiting for the game to load'
+	game.Loaded:Wait()
+	notLoaded:Destroy()
+end
+
 if game.PlaceId == 5846386835 then
     print("Trying to teleport :P")
     game:GetService("ReplicatedStorage").RemoteEvents.RequestPlayerTeleport:FireServer("3256865345_1")
