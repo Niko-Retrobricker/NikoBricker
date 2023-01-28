@@ -8,8 +8,11 @@ if not game:IsLoaded() then
 end
 
 if game.PlaceId == 5846386835 then
-    print("Trying to teleport :P")
-    game:GetService("ReplicatedStorage").RemoteEvents.RequestPlayerTeleport:FireServer("3256865345_1")
+    while true do
+        print("Trying to teleport :P")
+        game:GetService("ReplicatedStorage").RemoteEvents.RequestPlayerTeleport:FireServer("3256865345_1")
+        wait(0.2)
+    end
 end
 
 syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/NikoBricker/NikoBricker/main/testing/anti-place-ban.lua'))()")
